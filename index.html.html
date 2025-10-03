@@ -1,0 +1,953 @@
+<div class="products-list">
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALLDATA SEMA 2025 Pricing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            background: #003A70;
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 4px solid #FF6600;
+        }
+        
+        .header h1 {
+            font-size: 36px;
+            color: #003A70;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-weight: 900;
+        }
+        
+        .header p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .bundles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .custom-builder {
+            grid-column: 3;
+            grid-row: 2;
+            background: white;
+            border: 3px solid #FF6600;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        
+        .builder-title {
+            font-size: 20px;
+            font-weight: 900;
+            color: #003A70;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #FF6600;
+            text-align: center;
+        }
+        
+        .builder-controls {
+            margin-bottom: 15px;
+        }
+        
+        .builder-select-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .builder-select {
+            flex: 1;
+            padding: 8px;
+            border: 2px solid #003A70;
+            border-radius: 4px;
+            font-size: 13px;
+            background: white;
+            color: #003A70;
+            font-weight: 600;
+        }
+        
+        .builder-add-btn {
+            background: #FF6600;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        
+        .builder-add-btn:hover {
+            background: #003A70;
+        }
+        
+        .selected-products {
+            background: #F5F5F5;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 10px;
+            min-height: 80px;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+        
+        .selected-product-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 8px;
+            background: white;
+            border: 1px solid #E0E0E0;
+            border-radius: 4px;
+            margin-bottom: 6px;
+            font-size: 12px;
+        }
+        
+        .selected-product-name {
+            font-weight: 700;
+            color: #003A70;
+        }
+        
+        .selected-product-price {
+            color: #666;
+            margin-left: 8px;
+        }
+        
+        .remove-btn {
+            background: #FF6600;
+            color: white;
+            border: none;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .remove-btn:hover {
+            background: #CC5200;
+        }
+        
+        .empty-message {
+            color: #999;
+            font-size: 12px;
+            text-align: center;
+            font-style: italic;
+            padding: 20px;
+        }
+        
+        .builder-totals {
+            background: #003A70;
+            color: white;
+            padding: 12px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 13px;
+        }
+        
+        .total-row.discount {
+            color: #FF6600;
+            font-weight: 700;
+        }
+        
+        .total-row.final {
+            font-size: 18px;
+            font-weight: 900;
+            border-top: 2px solid white;
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+        
+        .final-price {
+            color: #FF6600;
+        }
+        
+        .discount-note {
+            font-size: 10px;
+            color: #FFB366;
+            text-align: center;
+            margin-top: 8px;
+            font-style: italic;
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border: 3px solid #003A70;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        
+        .modal-header {
+            color: #003A70;
+            font-size: 24px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #FF6600;
+        }
+        
+        .close {
+            color: #999;
+            float: right;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 20px;
+        }
+        
+        .close:hover {
+            color: #003A70;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-label {
+            display: block;
+            color: #003A70;
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #003A70;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #FF6600;
+        }
+        
+        .form-section {
+            background: #F5F5F5;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .form-section-title {
+            color: #FF6600;
+            font-weight: 900;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            background: #FF6600;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .submit-btn:hover {
+            background: #003A70;
+        }
+        
+        .cancel-btn {
+            width: 100%;
+            background: #999;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .cancel-btn:hover {
+            background: #666;
+        }
+        
+        .bundle-summary {
+            background: #003A70;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .bundle-summary-title {
+            font-weight: 900;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .bundle-summary-items {
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .bundle-summary-price {
+            font-size: 20px;
+            font-weight: 900;
+            color: #FF6600;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 2px solid white;
+        }
+        
+        .bundle-card {
+            background: white;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            position: relative;
+        }
+        
+        .pricing-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .select-deal-btn {
+            background: #003A70;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            flex: 0 0 auto;
+        }
+        
+        .select-deal-btn:hover {
+            background: #00509E;
+        }
+        
+        .bundle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        
+        .bundle-card.large {
+            grid-column: span 1;
+        }
+        
+        .bundle-title {
+            font-size: 20px;
+            font-weight: 900;
+            color: #003A70;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #FF6600;
+        }
+        
+        .products-list {
+            margin-bottom: 15px;
+        }
+        
+        .product-item {
+            margin-bottom: 10px;
+            padding: 8px;
+            background: #F5F5F5;
+            border-radius: 4px;
+        }
+        
+        .product-name {
+            font-weight: 700;
+            color: #003A70;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+        
+        .product-price {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .product-desc {
+            font-size: 11px;
+            color: #888;
+            margin-top: 2px;
+            line-height: 1.3;
+        }
+        
+        .pricing-section {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #E0E0E0;
+        }
+        
+        .standard-price {
+            font-size: 14px;
+            color: #999;
+            text-decoration: line-through;
+            margin-bottom: 8px;
+        }
+        
+        .discount-label {
+            display: inline-block;
+            background: #003A70;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        
+        .sema-price {
+            font-size: 32px;
+            font-weight: 900;
+            color: #FF6600;
+            margin: 10px 0;
+        }
+        
+        .sema-label {
+            font-size: 11px;
+            color: #003A70;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .savings {
+            background: #FF6600;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+            flex: 1;
+        }
+        
+        .product-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        
+        .footer {
+            background: #003A70;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+        
+        .footer-text {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-space {
+            background: white;
+            color: #003A70;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .free-badge {
+            background: #00AA00;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-left: 5px;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+            .container {
+                border-radius: 0;
+                padding: 15px;
+            }
+            .bundle-card:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔧 SEMA 2025 Exclusive Pricing – Save 20% On Bundles</h1>
+            <p>Tailored solutions for every type of shop – mechanical, collision, dealerships, educators, and multi-shop organizations.</p>
+        </div>
+        
+        <div class="bundles-grid">
+            <!-- Bundle 1 -->
+            <div class="bundle-card">
+                <div class="bundle-title">General Repair Shop Bundle</div>
+                <div class="products-list">
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                            </svg>
+                            ALLDATA Repair <span class="product-price">$209/mo</span>
+                        </div>
+                        <div class="product-desc">Industry's #1 OEM-accurate repair information</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M20 15.5c-1.2 0-2.5.3-3.6.9l-2.9-2.2c.1-.3.1-.6.1-.9 0-.3 0-.6-.1-.9l2.9-2.2c1.1.6 2.4.9 3.6.9 4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8c0 .3 0 .6.1.9L9.2 6.1C8.1 5.5 6.8 5.2 5.6 5.2 1.2 5.2-2.4 8.8-2.4 13.2s3.6 8 8 8c1.2 0 2.5-.3 3.6-.9l2.9 2.2c-.1.3-.1.6-.1.9 0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8z"/>
+                            </svg>
+                            Tech-Assist <span class="product-price">$59/mo</span>
+                        </div>
+                        <div class="product-desc">Live diagnostic support from ASE-Certified Masters</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                            </svg>
+                            Shop Manager <span class="product-price">$99/mo</span>
+                        </div>
+                        <div class="product-desc">Estimates, ROs, invoices, and parts ordering</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z"/>
+                            </svg>
+                            Mobile <span class="product-price">$39/mo</span>
+                        </div>
+                        <div class="product-desc">Desktop, tablet, and phone workflow integration</div>
+                    </div>
+                </div>
+                <div class="pricing-section">
+                    <div class="standard-price">Standard Price: $406/mo</div>
+                    <div class="discount-label">SEMA Show Discount: 20% Off</div>
+                    <div class="sema-label">SEMA SHOW PRICE</div>
+                    <div class="sema-price">$325/mo</div>
+                    <div class="savings">YOU SAVE $81/MO</div>
+                </div>
+            </div>
+            
+            <!-- Bundle 2 -->
+            <div class="bundle-card">
+                <div class="bundle-title">Collision Repair Shop Bundle</div>
+                <div class="products-list">
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1 14H9v-2h2v2zm0-4H9V6h2v6z"/>
+                            </svg>
+                            ALLDATA Collision <span class="product-price">$249/mo</span>
+                        </div>
+                        <div class="product-desc">OEM-accurate body repair information</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                            </svg>
+                            Repair Planner <span class="product-price">$129/mo</span>
+                        </div>
+                        <div class="product-desc">Alerts to OEM-required repairs and procedures</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z"/>
+                            </svg>
+                            Mobile <span class="product-price">$39/mo</span>
+                        </div>
+                        <div class="product-desc">Desktop, tablet, and phone workflow integration</div>
+                    </div>
+                </div>
+                <div class="pricing-section">
+                    <div class="standard-price">Standard Price: $417/mo</div>
+                    <div class="discount-label">SEMA Show Discount: 20% Off</div>
+                    <div class="sema-label">SEMA SHOW PRICE</div>
+                    <div class="sema-price">$334/mo</div>
+                    <div class="pricing-actions">
+                        <div class="savings">YOU SAVE $83/MO</div>
+                        <button class="select-deal-btn" onclick="selectBundle('Collision Repair Shop Bundle', 334, 83, ['ALLDATA Collision - $249/mo', 'Repair Planner - $129/mo', 'Mobile - $39/mo'])">Select Deal</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bundle 3 -->
+            <div class="bundle-card">
+                <div class="bundle-title">Dealership Bundle</div>
+                <div class="products-list">
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                            </svg>
+                            ALLDATA Repair <span class="product-price">$209/mo</span>
+                        </div>
+                        <div class="product-desc">OEM repair coverage across 95% of vehicles</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1 14H9v-2h2v2zm0-4H9V6h2v6z"/>
+                            </svg>
+                            ALLDATA Collision <span class="product-price">$249/mo</span>
+                        </div>
+                        <div class="product-desc">Factory-direct body shop repair information</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            Manage Online <span class="product-price">$249/mo</span>
+                        </div>
+                        <div class="product-desc">Full shop management with CRM and integrations</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z"/>
+                            </svg>
+                            Mobile <span class="product-price">$39/mo</span>
+                        </div>
+                        <div class="product-desc">Desktop, tablet, and phone workflow integration</div>
+                    </div>
+                </div>
+                <div class="pricing-section">
+                    <div class="standard-price">Standard Price: $746/mo</div>
+                    <div class="discount-label">SEMA Show Discount: 20% Off</div>
+                    <div class="sema-label">SEMA SHOW PRICE</div>
+                    <div class="sema-price">$597/mo</div>
+                    <div class="pricing-actions">
+                        <div class="savings">YOU SAVE $149/MO</div>
+                        <button class="select-deal-btn" onclick="selectBundle('Dealership Bundle', 597, 149, ['ALLDATA Repair - $209/mo', 'ALLDATA Collision - $249/mo', 'Manage Online - $249/mo', 'Mobile - $39/mo'])">Select Deal</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bundle 4 -->
+            <div class="bundle-card">
+                <div class="bundle-title">Educators Bundle</div>
+                <div class="products-list">
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                            </svg>
+                            ALLDATA Repair <span class="product-price">$209/mo</span>
+                        </div>
+                        <div class="product-desc">Complete OEM repair information library</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1 14H9v-2h2v2zm0-4H9V6h2v6z"/>
+                            </svg>
+                            ALLDATA Collision <span class="product-price">$249/mo</span>
+                        </div>
+                        <div class="product-desc">Professional collision repair training resource</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M20 15.5c-1.2 0-2.5.3-3.6.9l-2.9-2.2c.1-.3.1-.6.1-.9 0-.3 0-.6-.1-.9l2.9-2.2c1.1.6 2.4.9 3.6.9 4.4 0 8-3.6 8-8s-3.6-8-8-8-8 3.6-8 8c0 .3 0 .6.1.9L9.2 6.1C8.1 5.5 6.8 5.2 5.6 5.2 1.2 5.2-2.4 8.8-2.4 13.2s3.6 8 8 8c1.2 0 2.5-.3 3.6-.9l2.9 2.2c-.1.3-.1.6-.1.9 0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8z"/>
+                            </svg>
+                            Tech-Assist <span class="product-price">$59/mo</span>
+                        </div>
+                        <div class="product-desc">Live diagnostic support for teaching moments</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z"/>
+                            </svg>
+                            Mobile <span class="product-price">$39/mo</span>
+                        </div>
+                        <div class="product-desc">Multi-device access for classroom flexibility</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#00AA00">
+                                <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                            </svg>
+                            Estimator <span class="free-badge">FREE</span>
+                        </div>
+                        <div class="product-desc">Create estimates with OEM parts and AutoZone ordering</div>
+                    </div>
+                </div>
+                <div class="pricing-section">
+                    <div class="standard-price">Standard Price: $556/mo</div>
+                    <div class="discount-label">SEMA Show Discount: 20% Off</div>
+                    <div class="sema-label">SEMA SHOW PRICE</div>
+                    <div class="sema-price">$445/mo</div>
+                    <div class="pricing-actions">
+                        <div class="savings">YOU SAVE $111/MO</div>
+                        <button class="select-deal-btn" onclick="selectBundle('Educators Bundle', 445, 111, ['ALLDATA Repair - $209/mo', 'ALLDATA Collision - $249/mo', 'Tech-Assist - $59/mo', 'Mobile - $39/mo', 'Estimator - FREE'])">Select Deal</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bundle 5 -->
+            <div class="bundle-card">
+                <div class="bundle-title">Multi-Shop Organization Bundle</div>
+                <div class="products-list">
+                    <div class="product-item">
+                        <div class="product-name">⚙️ ALLDATA Repair <span class="product-price">$209/mo</span></div>
+                        <div class="product-desc">Consistent repair info across all locations</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">🔨 ALLDATA Collision <span class="product-price">$249/mo</span></div>
+                        <div class="product-desc">Standardized collision repair procedures</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">🏪 Shop Manager <span class="product-price">$99/mo</span></div>
+                        <div class="product-desc">Day-to-day management and workflow tools</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">💼 Manage Online <span class="product-price">$249/mo</span></div>
+                        <div class="product-desc">Enterprise management with reporting and CRM</div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-name">📱 Mobile <span class="product-price">$39/mo</span></div>
+                        <div class="product-desc">Organization-wide mobile access</div>
+                    </div>
+                </div>
+                <div class="pricing-section">
+                    <div class="standard-price">Standard Price: $845/mo</div>
+                    <div class="discount-label">SEMA Show Discount: 20% Off</div>
+                    <div class="sema-label">SEMA SHOW PRICE</div>
+                    <div class="sema-price">$676/mo</div>
+                    <div class="savings">YOU SAVE $169/MO</div>
+                    <button class="select-deal-btn" onclick="selectBundle('Multi-Shop Organization Bundle', 676, 169, ['ALLDATA Repair - $209/mo', 'ALLDATA Collision - $249/mo', 'Shop Manager - $99/mo', 'Manage Online - $249/mo', 'Mobile - $39/mo'])">✓ Select This Deal</button>
+                </div>
+            </div>
+            
+            <!-- Custom Bundle Builder -->
+            <div class="custom-builder">
+                <div class="builder-title">🎯 Build Your Own Bundle</div>
+                
+                <div class="builder-controls">
+                    <div class="builder-select-group">
+                        <select class="builder-select" id="productSelect">
+                            <option value="">Select a product...</option>
+                            <option value="repair|209">ALLDATA Repair - $209/mo</option>
+                            <option value="collision|249">ALLDATA Collision - $249/mo</option>
+                            <option value="techassist|59">Tech-Assist - $59/mo</option>
+                            <option value="shopmanager|99">Shop Manager - $99/mo</option>
+                            <option value="manageonline|249">Manage Online - $249/mo</option>
+                            <option value="mobile|39">Mobile - $39/mo</option>
+                            <option value="repairplanner|129">Repair Planner - $129/mo</option>
+                            <option value="estimator|0">Estimator - FREE</option>
+                        </select>
+                        <button class="builder-add-btn" onclick="addProduct()">+ Add</button>
+                    </div>
+                </div>
+                
+                <div class="selected-products" id="selectedProducts">
+                    <div class="empty-message">Select products above to build your bundle</div>
+                </div>
+                
+                <div class="builder-totals">
+                    <div class="total-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">$0/mo</span>
+                    </div>
+                    <div class="total-row discount">
+                        <span>SEMA Discount (20%):</span>
+                        <span id="discount">-$0/mo</span>
+                    </div>
+                    <div class="total-row final">
+                        <span>Your Price:</span>
+                        <span class="final-price" id="finalPrice">$0/mo</span>
+                    </div>
+                    <div class="discount-note" id="discountNote">Add 2+ products to qualify for 20% discount</div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            let selectedProducts = [];
+            
+            const productNames = {
+                'repair': 'ALLDATA Repair',
+                'collision': 'ALLDATA Collision',
+                'techassist': 'Tech-Assist',
+                'shopmanager': 'Shop Manager',
+                'manageonline': 'Manage Online',
+                'mobile': 'Mobile',
+                'repairplanner': 'Repair Planner',
+                'estimator': 'Estimator'
+            };
+            
+            function addProduct() {
+                const select = document.getElementById('productSelect');
+                const value = select.value;
+                
+                if (!value) return;
+                
+                const [id, price] = value.split('|');
+                const priceNum = parseInt(price);
+                
+                // Check if product already added
+                if (selectedProducts.some(p => p.id === id)) {
+                    alert('This product is already in your bundle!');
+                    return;
+                }
+                
+                selectedProducts.push({
+                    id: id,
+                    name: productNames[id],
+                    price: priceNum
+                });
+                
+                updateDisplay();
+                select.value = '';
+            }
+            
+            function removeProduct(id) {
+                selectedProducts = selectedProducts.filter(p => p.id !== id);
+                updateDisplay();
+            }
+            
+            function updateDisplay() {
+                const container = document.getElementById('selectedProducts');
+                
+                if (selectedProducts.length === 0) {
+                    container.innerHTML = '<div class="empty-message">Select products above to build your bundle</div>';
+                } else {
+                    container.innerHTML = selectedProducts.map(p => `
+                        <div class="selected-product-item">
+                            <div>
+                                <span class="selected-product-name">${p.name}</span>
+                                <span class="selected-product-price">${p.price}/mo</span>
+                            </div>
+                            <button class="remove-btn" onclick="removeProduct('${p.id}')">Remove</button>
+                        </div>
+                    `).join('');
+                }
+                
+                updateTotals();
+            }
+            
+            function updateTotals() {
+                const subtotal = selectedProducts.reduce((sum, p) => sum + p.price, 0);
+                const qualifiesForDiscount = selectedProducts.length >= 2;
+                const discountAmount = qualifiesForDiscount ? Math.round(subtotal * 0.20) : 0;
+                const finalPrice = subtotal - discountAmount;
+                
+                document.getElementById('subtotal').textContent = `${subtotal}/mo`;
+                document.getElementById('discount').textContent = `-${discountAmount}/mo`;
+                document.getElementById('finalPrice').textContent = `${finalPrice}/mo`;
+                
+                const discountNote = document.getElementById('discountNote');
+                if (qualifiesForDiscount) {
+                    discountNote.textContent = `You're saving ${discountAmount}/mo with SEMA discount!`;
+                    discountNote.style.color = '#FFB366';
+                } else if (selectedProducts.length === 1) {
+                    discountNote.textContent = 'Add 1 more product to qualify for 20% discount';
+                    discountNote.style.color = '#FFB366';
+                } else {
+                    discountNote.textContent = 'Add 2+ products to qualify for 20% discount';
+                    discountNote.style.color = '#FFB366';
+                }
+            }
+        </script>
+        
+        <div class="footer">
+            <div class="footer-text">🔧 ALLDATA – Technology Solutions for Automotive Repair</div>
+            <div class="contact-space">Sales Rep: ___________________</div>
+        </div>
+    </div>
+</body>
+</html>
