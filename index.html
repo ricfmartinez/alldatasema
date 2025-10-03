@@ -547,6 +547,112 @@
             margin-left: 5px;
         }
 
+        @media (max-width: 1200px) {
+            .bundles-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .custom-builder {
+                grid-column: span 2;
+                grid-row: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .header p {
+                font-size: 14px;
+            }
+            
+            .bundles-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .custom-builder {
+                grid-column: 1;
+            }
+            
+            .bundle-title {
+                font-size: 18px;
+            }
+            
+            .product-name {
+                font-size: 13px;
+            }
+            
+            .product-desc {
+                font-size: 10px;
+            }
+            
+            .sema-price {
+                font-size: 28px;
+            }
+            
+            .savings {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+            
+            .footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .footer-text {
+                font-size: 14px;
+            }
+            
+            .builder-select-group {
+                flex-direction: column;
+            }
+            
+            .builder-add-btn {
+                width: 100%;
+            }
+            
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+                margin: 10% auto;
+            }
+            
+            .modal-header {
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .bundle-title {
+                font-size: 16px;
+            }
+            
+            .sema-price {
+                font-size: 24px;
+            }
+            
+            .product-icon {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
         @media print {
             body {
                 padding: 0;
@@ -656,10 +762,7 @@
                     <div class="discount-label">SEMA Show Discount: 20% Off</div>
                     <div class="sema-label">SEMA SHOW PRICE</div>
                     <div class="sema-price">$334/mo</div>
-                    <div class="pricing-actions">
-                        <div class="savings">YOU SAVE $83/MO</div>
-                        <button class="select-deal-btn" onclick="selectBundle('Collision Repair Shop Bundle', 334, 83, ['ALLDATA Collision - $249/mo', 'Repair Planner - $129/mo', 'Mobile - $39/mo'])">Select Deal</button>
-                    </div>
+                    <div class="savings">YOU SAVE $83/MO</div>
                 </div>
             </div>
             
@@ -709,10 +812,7 @@
                     <div class="discount-label">SEMA Show Discount: 20% Off</div>
                     <div class="sema-label">SEMA SHOW PRICE</div>
                     <div class="sema-price">$597/mo</div>
-                    <div class="pricing-actions">
-                        <div class="savings">YOU SAVE $149/MO</div>
-                        <button class="select-deal-btn" onclick="selectBundle('Dealership Bundle', 597, 149, ['ALLDATA Repair - $209/mo', 'ALLDATA Collision - $249/mo', 'Manage Online - $249/mo', 'Mobile - $39/mo'])">Select Deal</button>
-                    </div>
+                    <div class="savings">YOU SAVE $149/MO</div>
                 </div>
             </div>
             
@@ -771,10 +871,7 @@
                     <div class="discount-label">SEMA Show Discount: 20% Off</div>
                     <div class="sema-label">SEMA SHOW PRICE</div>
                     <div class="sema-price">$445/mo</div>
-                    <div class="pricing-actions">
-                        <div class="savings">YOU SAVE $111/MO</div>
-                        <button class="select-deal-btn" onclick="selectBundle('Educators Bundle', 445, 111, ['ALLDATA Repair - $209/mo', 'ALLDATA Collision - $249/mo', 'Tech-Assist - $59/mo', 'Mobile - $39/mo', 'Estimator - FREE'])">Select Deal</button>
-                    </div>
+                    <div class="savings">YOU SAVE $111/MO</div>
                 </div>
             </div>
             
@@ -783,23 +880,48 @@
                 <div class="bundle-title">Multi-Shop Organization Bundle</div>
                 <div class="products-list">
                     <div class="product-item">
-                        <div class="product-name">⚙️ ALLDATA Repair <span class="product-price">$209/mo</span></div>
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+                            </svg>
+                            ALLDATA Repair <span class="product-price">$209/mo</span>
+                        </div>
                         <div class="product-desc">Consistent repair info across all locations</div>
                     </div>
                     <div class="product-item">
-                        <div class="product-name">🔨 ALLDATA Collision <span class="product-price">$249/mo</span></div>
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm-1 14H9v-2h2v2zm0-4H9V6h2v6z"/>
+                            </svg>
+                            ALLDATA Collision <span class="product-price">$249/mo</span>
+                        </div>
                         <div class="product-desc">Standardized collision repair procedures</div>
                     </div>
                     <div class="product-item">
-                        <div class="product-name">🏪 Shop Manager <span class="product-price">$99/mo</span></div>
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                            </svg>
+                            Shop Manager <span class="product-price">$99/mo</span>
+                        </div>
                         <div class="product-desc">Day-to-day management and workflow tools</div>
                     </div>
                     <div class="product-item">
-                        <div class="product-name">💼 Manage Online <span class="product-price">$249/mo</span></div>
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            Manage Online <span class="product-price">$249/mo</span>
+                        </div>
                         <div class="product-desc">Enterprise management with reporting and CRM</div>
                     </div>
                     <div class="product-item">
-                        <div class="product-name">📱 Mobile <span class="product-price">$39/mo</span></div>
+                        <div class="product-name">
+                            <svg class="product-icon" viewBox="0 0 24 24" fill="#003A70">
+                                <path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z"/>
+                            </svg>
+                            Mobile <span class="product-price">$39/mo</span>
+                        </div>
                         <div class="product-desc">Organization-wide mobile access</div>
                     </div>
                 </div>
@@ -809,7 +931,6 @@
                     <div class="sema-label">SEMA SHOW PRICE</div>
                     <div class="sema-price">$676/mo</div>
                     <div class="savings">YOU SAVE $169/MO</div>
-                    <button class="select-deal-btn" onclick="selectBundle('Multi-Shop Organization Bundle', 676, 169, ['ALLDATA Repair - $209/mo', 'ALLDATA Collision - $249/mo', 'Shop Manager - $99/mo', 'Manage Online - $249/mo', 'Mobile - $39/mo'])">✓ Select This Deal</button>
                 </div>
             </div>
             
